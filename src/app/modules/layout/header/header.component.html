@@ -1,0 +1,17 @@
+<header class="header">
+  <mat-toolbar>
+    <button mat-icon-button aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ username ? "Hi, " + username : "My app" }}</span>
+    <span class="spacer"></span>
+    <ng-template [ngIf]="!isLoggined">
+      <button mat-icon-button routerLink="auth">Login</button>
+    </ng-template>
+    <ng-template [ngIf]="isLoggined">
+      <button mat-icon-button (click)="signOut()" routerLink="auth">
+        Sign-out
+      </button>
+    </ng-template>
+  </mat-toolbar>
+</header>

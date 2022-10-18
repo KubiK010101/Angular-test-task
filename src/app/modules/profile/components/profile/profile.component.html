@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <h4 class="title">Your profile</h4>
+  <div class="content">
+    <form [formGroup]="form" class="form" (ngSubmit)="save()">
+      <div class="form-content">
+        <label
+          class="photo-picker"
+          matTooltip="Choose image"
+          matTooltipPosition="above"
+          (change)="fileUpload($event)"
+          #photoPicker
+        >
+          <input type="file" class="file-input" />
+        </label>
+        <div class="row">
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Enter your username</mat-label>
+            <input
+              matInput
+              placeholder="Username"
+              formControlName="username"
+              type="text"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              type="email"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Enter your age</mat-label>
+            <input matInput placeholder="Age" formControlName="age" type="number" />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="form-item">
+            <mat-label>Enter your country</mat-label>
+            <input
+              matInput
+              placeholder="Country"
+              formControlName="country"
+              type="text"
+            />
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="fill" class="form-item">
+          <mat-label>Enter your phone</mat-label>
+          <input
+            matInput
+            placeholder="Phone"
+            formControlName="phone"
+            type="number"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="submit-btn" [disabled]="form.invalid">
+          Edit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

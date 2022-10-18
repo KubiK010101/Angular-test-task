@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h4 class="title">A verification code has been sent to your phone</h4>
+  <form [formGroup]="form" class="form" (ngSubmit)="submitCode()">
+    <mat-form-field appearance="fill" class="form-item">
+      <mat-label>Phone number</mat-label>
+      <input
+        matInput
+        placeholder="Phone"
+        formControlName="phone"
+        type="number"
+        readonly="true"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-item">
+      <mat-label>Type verification code</mat-label>
+      <input
+        matInput
+        placeholder="Verification code"
+        formControlName="code"
+        type="number"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" class="submit-btn">
+      Submit
+    </button>
+  </form>
+</div>
